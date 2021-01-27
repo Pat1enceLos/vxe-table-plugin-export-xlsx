@@ -7,10 +7,10 @@ import {
   VxeTablePropTypes,
   VxeTableDefines,
   VxeGlobalInterceptorHandles
-} from 'vxe-table/lib/vxe-table'
+} from '@oa/vxe-table/lib/vxe-table'
 import * as ExcelJS from 'exceljs'
 
-declare module 'vxe-table/lib/vxe-table' {
+declare module '@oa/vxe-table/lib/vxe-table' {
   namespace VxeTableDefines {
     interface ExtortSheetMethodParams {
       workbook: ExcelJS.Workbook;
