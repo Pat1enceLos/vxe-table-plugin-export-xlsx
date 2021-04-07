@@ -1,9 +1,10 @@
 {
-  "name": "vxe-table-plugin-export-xlsx",
-  "version": "3.0.1",
+  "name": "@oa/vxe-table-plugin-export-xlsx",
+  "version": "3.0.2",
   "description": "基于 vxe-table 的表格插件，支持导出 xlsx 格式",
   "scripts": {
-    "lib": "gulp build"
+    "lib": "gulp build",
+    "publish": "npm publish --registry http://npm.xindong.com"
   },
   "files": [
     "dist",
@@ -57,18 +58,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/x-extends/vxe-table-plugin-export-xlsx.git"
+    "url": "git+https://github.com/Pat1enceLos/vxe-table-plugin-export-xlsx.git"
   },
   "keywords": [
-    "vxe-table-plugin-export-xlsx"
+    "@oa/vxe-table-plugin-export-xlsx"
   ],
   "author": {
-    "name": "Xu Liangzhan",
-    "email": "xu_liangzhan@163.com"
+    "name": "TanYang",
+    "email": "tanyang@xd.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/x-extends/vxe-table-plugin-export-xlsx/issues"
-  },
-  "homepage": "https://github.com/x-extends/vxe-table-plugin-export-xlsx#readme"
+  "homepage": "https://github.com/Pat1enceLos/vxe-table-plugin-export-xlsx"
 }

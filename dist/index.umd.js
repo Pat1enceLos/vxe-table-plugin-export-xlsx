@@ -1,6 +1,6 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define("vxe-table-plugin-export-xlsx", ["exports", "xe-utils", "exceljs"], factory);
+    define("@oa/vxe-table-plugin-export-xlsx", ["exports", "xe-utils", "exceljs"], factory);
   } else if (typeof exports !== "undefined") {
     factory(exports, require("xe-utils"), require("exceljs"));
   } else {
