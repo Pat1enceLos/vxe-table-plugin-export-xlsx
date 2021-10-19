@@ -412,17 +412,13 @@
     var showMsg = message !== false;
 
     if (window.Blob) {
-      if (navigator.msSaveBlob) {
-        navigator.msSaveBlob(blob, "".concat(filename, ".").concat(type));
-      } else {
-        var linkElem = document.createElement('a');
-        linkElem.target = '_blank';
-        linkElem.download = "".concat(filename, ".").concat(type);
-        linkElem.href = URL.createObjectURL(blob);
-        document.body.appendChild(linkElem);
-        linkElem.click();
-        document.body.removeChild(linkElem);
-      }
+      var linkElem = document.createElement('a');
+      linkElem.target = '_blank';
+      linkElem.download = "".concat(filename, ".").concat(type);
+      linkElem.href = URL.createObjectURL(blob);
+      document.body.appendChild(linkElem);
+      linkElem.click();
+      document.body.removeChild(linkElem);
     } else {
       if (showMsg) {
         vxetable.modal.alert({

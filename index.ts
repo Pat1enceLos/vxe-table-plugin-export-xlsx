@@ -314,17 +314,13 @@ function downloadFile (params: VxeGlobalInterceptorHandles.InterceptorExportPara
   const { message, filename, type } = options
   const showMsg = message !== false
   if (window.Blob) {
-    if (navigator.msSaveBlob) {
-      navigator.msSaveBlob(blob, `${filename}.${type}`)
-    } else {
-      const linkElem = document.createElement('a')
-      linkElem.target = '_blank'
-      linkElem.download = `${filename}.${type}`
-      linkElem.href = URL.createObjectURL(blob)
-      document.body.appendChild(linkElem)
-      linkElem.click()
-      document.body.removeChild(linkElem)
-    }
+    const linkElem = document.createElement('a')
+    linkElem.target = '_blank'
+    linkElem.download = `${filename}.${type}`
+    linkElem.href = URL.createObjectURL(blob)
+    document.body.appendChild(linkElem)
+    linkElem.click()
+    document.body.removeChild(linkElem)
   } else {
     if (showMsg) {
       vxetable.modal.alert({ message: vxetable.t('vxe.error.notExp'), status: 'error' })
