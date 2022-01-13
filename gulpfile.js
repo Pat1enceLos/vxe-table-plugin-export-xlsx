@@ -61,10 +61,32 @@ gulp.task('build_umd', function () {
     .pipe(gulp.dest('dist'))
 })
 
+gulp.task('build_esm', () => {
+  return gulp.src(['index.ts'])
+    .pipe(sourcemaps.init())
+    .pipe(ts(tsconfig.compilerOptions))
+    .pipe(babel({
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            modules: false
+          }
+        ]
+      ]
+    }))
+    .pipe(rename({
+      basename: 'index',
+      extname: '.esm.js'
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist'))
+})
+
 gulp.task('clear', () => {
   return del([
     'dist/depend.*'
   ])
 })
 
-gulp.task('build', gulp.series(gulp.parallel('build_commonjs', 'build_umd'), 'clear'))
+gulp.task('build', gulp.series(gulp.parallel('build_commonjs', 'build_umd', 'build_esm'), 'clear'))
